@@ -4,7 +4,6 @@
              x:Class="CMongeExamen.Views.Registro"
              Title="">
     <VerticalStackLayout>
-            
         <Label x:Name="txtuser"/>
 
         <Label 
@@ -27,13 +26,13 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+
             <Label Text="Fecha"
                    Grid.Row="0"
                    Grid.Column="0"/>
             <Label Text="País"        
                    Grid.Row="1"
                    Grid.Column="0"/>
-
             <Label Text="Ciudad"        
                    Grid.Row="2"
                    Grid.Column="0"/>
@@ -43,11 +42,13 @@
             <Label Text="Pago mensual:"        
                    Grid.Row="4"
                    Grid.Column="0"/>
+
             <Button x:Name="btnPago"
                 Text="Calcular Pago mensual"
-                    Clicked="btnPago_Clicked"
-                    Grid.Row="5" Grid.Column="0"
-                    />
+                Clicked="btnPago_Clicked"
+                Grid.Row="5"
+                Grid.Column="0"/>
+
             <DatePicker x:Name="FechaS"      
                    Grid.Row="0"
                    Grid.Column="1"/>
@@ -60,6 +61,8 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
+
+            <Picker x:Name="ciudadPicker" Grid.Row="2" Grid.Column="1">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Quito</x:String>
@@ -70,7 +73,7 @@
             </Picker>
 
             <Entry x:Name="txtMonto"
-                   Placeholder="Monto Inicial: "        
+                   Placeholder="Monto Inicial:"        
                    Grid.Row="3"
                    Grid.Column="1"/>
             <Entry x:Name="txtPago"
@@ -80,18 +83,17 @@
                    IsReadOnly="True"/>
         </Grid>
 
-        
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
-                
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+
             <Label Text="NOMBRE" Grid.Row="0" Grid.Column="0" />
             <Label Text="APELLIDO" Grid.Row="0" Grid.Column="1" />
             <Label Text="EDAD" Grid.Row="0" Grid.Column="2" />
@@ -111,14 +113,9 @@
                    Grid.Column="2" 
                    x:Name="txtEdad"/>
         </Grid>
-        <Button x:Name="btnIniciar"
-        Text="Ver resumen"
-        Clicked="btnIniciar_Clicked"
-        Grid.Row="0"
-        Grid.Column="0"/>
-         
 
+        <Button x:Name="btnIniciar"
+            Text="Ver resumen"
+            Clicked="btnIniciar_Clicked" />
     </VerticalStackLayout>
-    
-    
 </ContentPage>

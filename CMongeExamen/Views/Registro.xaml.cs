@@ -2,16 +2,17 @@ namespace CMongeExamen.Views;
 
 public partial class Registro : ContentPage
 {
-	string usuario;
+    string usuario;
     string connectedUser;
     decimal pagoMensual;
     decimal montoInicial;
-	public Registro(string username)
-	{
-		InitializeComponent();
-		usuario= username;
-		txtuser.Text = "Usuario conectado: " + usuario;
-	}
+
+    public Registro(string username)
+    {
+        InitializeComponent();
+        usuario = username;
+        txtuser.Text = "Usuario conectado: " + usuario;
+    }
 
     private void btnPago_Clicked(object sender, EventArgs e)
     {
@@ -32,22 +33,20 @@ public partial class Registro : ContentPage
         decimal porcentaje = 1500 * 0.04m;
         pagoMensual = (1500 - montoInicial) / 4 + porcentaje;
         txtPago.Text = pagoMensual.ToString("F2");
-
-
     }
+
     private async void btnIniciar_Clicked(object sender, EventArgs e)
     {
         if (paisPicker.SelectedIndex == -1)
         {
-            DisplayAlert("Error", "Debe seleccionar País", "OK");
+            await DisplayAlert("Error", "Debe seleccionar País", "OK");
             return;
         }
 
-        if (CiudadP.SelectedIndex == -1)
+        if (ciudadPicker.SelectedIndex == -1)
         {
-            DisplayAlert("Error", "Debe seleccionar Ciudad", "OK");
+            await DisplayAlert("Error", "Debe seleccionar Ciudad", "OK");
             return;
-    }
-    {
+        }
     }
 }
