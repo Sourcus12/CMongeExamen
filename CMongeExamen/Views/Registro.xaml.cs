@@ -39,14 +39,48 @@ public partial class Registro : ContentPage
     {
         if (paisPicker.SelectedIndex == -1)
         {
-            await DisplayAlert("Error", "Debe seleccionar País", "OK");
+            DisplayAlert("Error", "Debe seleccionar País", "OK");
             return;
         }
 
         if (ciudadPicker.SelectedIndex == -1)
         {
-            await DisplayAlert("Error", "Debe seleccionar Ciudad", "OK");
+            DisplayAlert("Error", "Debe seleccionar Ciudad", "OK");
             return;
         }
+
+        if (string.IsNullOrEmpty(txtNombre.Text))
+        {
+            DisplayAlert("Error", "Debe ingresar Nombre", "OK");
+            return;
+        }
+
+        if (string.IsNullOrEmpty(txtApellido.Text))
+        {
+            DisplayAlert("Error", "Debe ingresar Apellido", "OK");
+            return;
+        }
+
+        if (string.IsNullOrEmpty(txtEdad.Text))
+        {
+            DisplayAlert("Error", "Debe ingresar Edad", "OK");
+            return;
+        }
+
+        if (FechaS.Date < DateTime.Now)
+        {
+            DisplayAlert("Error", "La fecha debe ser mayor a la actual", "OK");
+            return;
+        }
+
+        if (string.IsNullOrEmpty(txtMonto.Text))
+        {
+            DisplayAlert("Error", "Debe calcular el pago", "OK");
+            return;
+        }
+
+        decimal pagoTotal = pagoMensual * 4 + montoInicial;
+
+        await Navigation.PushAsync(new Views.Resumen(usuario, txtMonto.Text, txtPago.Text, pagoTotal.ToString(), FechaS.Date.ToString("dd-MM-yyyy"), paisPicker.SelectedItem.ToString(), ciudadPicker.SelectedItem.ToString(), txtNombre.Text, txtApellido.Text, txtEdad.Text));
     }
 }
