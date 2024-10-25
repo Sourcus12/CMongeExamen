@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CMongeExamen.Views.Login">
+
+
+    <VerticalStackLayout>
+        <Label 
+        Text="Inicio de Sesión"
+        FontSize="20"
+        TextColor="Red"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" />
+        <Image Source="https://sbsconsulting.com.ec/wp-content/uploads/2018/01/LOGO-UISRAEL-768x209.png"
+       WidthRequest="250"
+       />
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Entry x:Name="usernameEntry"
+            Placeholder="Usuario"
+            Grid.Row="0"
+            Grid.Column="1"/>
+            <Entry x:Name="passwordEntry"
+             Placeholder="Contraseña"        
+             Grid.Row="1"
+             Grid.Column="1"/>
+            <Label Text="Usuario"
+       Grid.Row="0"
+       Grid.Column="0"/>
+            <Label Text="Contraseña"
+       Grid.Row="1"
+       Grid.Column="0"/>
+        </Grid>
+
+        <Button Text="Iniciar Sesión"
+            Clicked="Button_Clicked"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand" />
+
+        <Label x:Name="messageLabel"
+           TextColor="Red"
+           HorizontalOptions="Center"
+           VerticalOptions="EndAndExpand" />
+
+
+    </VerticalStackLayout>
+</ContentPage>
