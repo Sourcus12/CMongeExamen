@@ -6,7 +6,7 @@ public partial class Registro : ContentPage
     string connectedUser;
     decimal pagoMensual;
     decimal montoInicial;
-    public Registro(string username)
+	public Registro(string username)
 	{
 		InitializeComponent();
 		usuario= username;
@@ -47,40 +47,7 @@ public partial class Registro : ContentPage
         {
             DisplayAlert("Error", "Debe seleccionar Ciudad", "OK");
             return;
-        }
-
-        if (string.IsNullOrEmpty(txtNombre.Text))
-        {
-            DisplayAlert("Error", "Debe ingresar Nombre", "OK");
-            return;
-        }
-
-        if (string.IsNullOrEmpty(txtApellido.Text))
-        {
-            DisplayAlert("Error", "Debe ingresar Apellido", "OK");
-            return;
-        }
-
-        if (string.IsNullOrEmpty(txtEdad.Text))
-        {
-            DisplayAlert("Error", "Debe ingresar Edad", "OK");
-            return;
-        }
-
-        if (FechaS.Date < DateTime.Now)
-        {
-            DisplayAlert("Error", "La fecha debe ser mayor a la actual", "OK");
-            return;
-        }
-
-        if (string.IsNullOrEmpty(txtMonto.Text))
-        {
-            DisplayAlert("Error", "Debe calcular el pago", "OK");
-            return;
-        }
-
-        decimal pagoTotal = pagoMensual * 4 + montoInicial;
-
-        await Navigation.PushAsync(new Views.Resumen(usuario, txtMonto.Text, txtPago.Text, pagoTotal.ToString(), FechaS.Date.ToString("dd-MM-yyyy"), paisPicker.SelectedItem.ToString(), CiudadP.SelectedItem.ToString(), txtNombre.Text, txtApellido.Text, txtEdad.Text));
+    }
+    {
     }
 }

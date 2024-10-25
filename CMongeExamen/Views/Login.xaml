@@ -33,7 +33,7 @@
              Grid.Row="1"
              Grid.Column="1"/>
             <Label Text="Usuario"
-       Grid.Row="0"
+             Grid.Row="0"
        Grid.Column="0"/>
             <Label Text="Contraseña"
        Grid.Row="1"

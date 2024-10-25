@@ -60,7 +60,6 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
-            <Picker x:Name="CiudadP" Grid.Row="2" Grid.Column="1">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Quito</x:String>

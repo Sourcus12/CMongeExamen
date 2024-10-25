@@ -18,5 +18,5 @@ public partial class Resumen : ContentPage
         MontoInicialLabel.Text = montoInicial;
         PagoMensualLabel.Text = pagoMensual;
         PagoTotalLabel.Text = pagoTotal;
-    }
+	}
 }
